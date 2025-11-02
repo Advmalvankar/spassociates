@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SP Associates — Advocates & Legal Consultants</title>
+  <meta name="description" content="Full-service law firm in Navi Mumbai: Civil, Criminal, Corporate, Banking, Family, Contract, Societies, Real Estate, IPR, and more." />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --ink: #111111;
+      --muted: #6b6b6b;
+      --accent: #b88b2f;
+      --card: #f5f5f5;
+      --max-width: 1100px;
+      --serif: "Bookman Old Style", "Book Antiqua", Palatino, serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: var(--serif);
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.5;
+    }
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 24px;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 18px 0;
+      border-bottom: 1px solid #efefef;
+    }
+    .brand {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+    }
+    .brand img {
+      width: 72px;
+      height: 72px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+    .title h1, h3, h2, h4, strong, b {
+      font-family: var(--serif);
+      font-weight: bold;
+    }
+    .title h1 {
+      margin: 0;
+      font-size: 20px;
+      letter-spacing: 1px;
+    }
+    .title p {
+      margin: 0;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    .tagline {
+      font-weight: 600;
+      color: var(--muted);
+    }
+    nav {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+    .nav-links {
+      display: flex;
+      gap: 12px;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--ink);
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+    .nav-links a:hover {
+      background: var(--card);
+    }
+    .nav-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid #ddd;
+      padding: 8px;
+      border-radius: 8px;
+    }
+    .hero {
+      text-align: center;
+      margin-top: 20px;
+      position: relative;
+    }
+    .hero img {
+      width: 100%;
+      max-height: 400px;
+      object-fit: cover;
+      border-radius: 10px;
+      filter: brightness(85%);
+    }
+    .hero-title {
+      position: absolute;
+      top: 90px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100%;
+      color: white;
+      font-size: 42px;
+      font-family: var(--serif);
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-shadow: 0 2px 10px #0009;
+      pointer-events: none;
+    }
+    .subtitle {
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-size: 20px;
+      color: #333;
+      text-align: center;
+      font-family: var(--serif);
+      font-weight: bold;
+    }
+    section {
+      padding: 36px 0;
+      border-bottom: 1px solid #f0f0f0;
+    }
+    h3 {
+      margin-top: 0;
+    }
+
+    /* Practice Areas Section */
+    .practice-list {
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+      margin-top: 24px;
+    }
+    .practice-item {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      align-items: center;
+      gap: 18px;
+      background: #f9f9f9;
+      border-radius: 10px;
+      padding: 14px 18px;
+    }
+    .practice-img img {
+      width: 110px;
+      height: 110px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px #0002;
+    }
+    .practice-text {
+      font-size: 16px;
+      color: #222;
+      line-height: 1.6;
+    }
+    @media(max-width: 700px) {
+      .practice-item {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .practice-img img {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 8px;
+      }
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 18px;
+    }
+    .member {
+      background: white;
+      border: 1px solid #eee;
+      padding: 16px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    .member img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 8px;
+    }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 20px;
+    }
+    .contact-card {
+      background: var(--card);
+      padding: 18px;
+      border-radius: 10px;
+    }
+    .contact-card a {
+      display: inline-block;
+      margin-top: 6px;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    footer {
+      padding: 18px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    @media(max-width: 880px) {
+      .contact-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .nav-toggle { display: block; }
+    }
+    @media(max-width: 520px) {
+      .hero-title { font-size: 28px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <img src="images/logo.jpg" alt="logo">
+        <div class="title">
+          <h1>SP ASSOCIATES</h1>
+          <p class="tagline">Justice is Paramount</p>
+        </div>
+      </div>
+      <nav>
+        <button class="nav-toggle">Menu</button>
+        <div class="nav-links">
+          <a href="#about">About</a>
+          <a href="#practice">Practice Areas</a>
+          <a href="#team">Team</a>
+          <a href="#contact">Contact</a>
+          <a href="#consultation">Book Consultation</a>
+        </div>
+      </nav>
+    </header>
+    <section id="home" class="hero">
+      <img src="images/Image O.png" alt="Image O">
+      <div class="hero-title">SP ASSOCIATES</div> 
+      <div class="subtitle">
+        Advocates & Legal Consultants — Delivering justice with integrity for over 17 years.
+      </div>
+    </section>
+
+    <section id="about">
+      <h3>About SP Associates</h3>
+      <p>
+        Founded in 2008 by <strong>Adv. Siddhesh Vitthal Patil</strong>, SP Associates is a full-service law firm headquartered in Vashi, Navi Mumbai. With a legacy of over 17 years of undefeated practice, the firm has earned distinction for its ethical, client-centric, and result-oriented approach to legal representation across multiple domains of law.
+      </p>
+      <p>
+        Guided by the standards laid down under the Advocates Act, 1961, SP Associates upholds the highest ideals of the legal profession—integrity, independence, diligence, and accountability. The firm's ethos embodies the duties of an advocate as an officer of the court, ensuring justice is pursued not merely as a profession, but as a solemn responsibility to society.
+      </p>
+      <p>
+        Under the leadership of Adv. Siddhesh Patil, who also serves as the General Secretary of Adhivakta Parishad, Navi Mumbai, the firm has built a reputation for professionalism, precision, and honesty in every facet of legal practice. Each member of the firm is committed to maintaining impartial conduct, respecting professional confidentiality, and providing competent legal services in accordance with statutory norms and professional ethics.
+      </p>
+      <p>
+        SP Associates operates on the principle that <strong>justice is paramount</strong>. The firm's practice spans civil, criminal, corporate, constitutional, and property law, among other areas, delivering comprehensive legal solutions to individuals, businesses, and institutions. Through a balanced blend of advocacy, advisory, and negotiation, SP Associates continues to contribute to the growth of an equitable and transparent legal system in India.
+      </p>
+      <p>
+        With a dedicated team of associates and trainees, the firm nurtures a culture of continuous learning and professional excellence. Its commitment to public service, ethical advocacy, and respect for the rule of law stands as a testament to its longstanding values and its vision for a just and responsible legal community.
+      </p>
+    </section>
+
+    <section id="practice">
+      <h3>Practice Areas</h3>
+      <div class="practice-list">
+        <div class="practice-item">
+          <div class="practice-img">
+            <img src="images/Image A.webp" alt="Image A">
+          </div>
+          <div class="practice-text">
+            <strong>Civil Litigation:</strong> Property, recovery, injunctions, tenancy, and contract cases; strategic advocacy before courts.
+          </div>
+        </div>
+        <div class="practice-item">
+          <div class="practice-img">
+            <img src="images/Image B.Png" alt="Image B">
+          </div>
+          <div class="practice-text">
+            <strong>Criminal Law:</strong> Bail, trials, appeals, and revisions; adherence to CrPC and IPC procedures.
+          </div>
+        </div>
+        <div class="practice-item">
+          <div class="practice-img">
+            <img src="images/Image C.jpg" alt="Image C">
+          </div>
+          <div class="practice-text">
+            <strong>Family and Divorce Law:</strong> Matrimonial disputes, divorce, maintenance, custody, and domestic violence; focus on mediation.
+          </div>
+        </div>
+        <div class="practice-item">
+          <div class="practice-img">
+            <img src="images/Image D.jpg" alt="Image D">
+          </div>
+          <div class="practice-text">
+            <strong>Banking & NI Act (138):</strong> Cheque dishonour, banking disputes, loan recoveries, and DRT matters.
+          </div>
+        </div>
+        <div class="practice-item">
+          <div class="practice-img">
+            <img src="images/Image E.jpg" alt="Image E">
+          </div>
+          <div class="practice-text">
+            <strong>Corporate and Contract Law:</strong> Mergers, incorporations, contract drafting, compliance, and dispute resolution.
+          </div>
+        </div>
+        <div class="practice-item">
+          <div class="practice-img">
+            <img src="images/Image F.jpeg" alt="Image F">
+          </div>
+          <div class="practice-text">
+            <strong>Consultation & Legal Opinions:</strong> Well-reasoned legal opinions and strategic advice.
+          </div>
+        </div>
+        <div class="practice-item">
+          <div class="practice-img">
+            <img src="images/Image G.jpg" alt="Image G">
+          </div>
+          <div class="practice-text">
+            <strong>Society, Trust & Notary Matters:</strong> Registrations, trust formation, compliance, and certified notarial services.
+          </div>
+        </div>
+        <div class="practice-item">
+          <div class="practice-img">
+            <img src="images/Image H.jpg" alt="Image H">
+          </div>
+          <div class="practice-text">
+            <strong>Property and Real Estate Law:</strong> Conveyancing, title verification, joint development, redevelopment, RERA compliance.
+          </div>
+        </div>
+        <div class="practice-item">
+          <div class="practice-img">
+            <img src="images/Image I.webp" alt="Image I">
+          </div>
+          <div class="practice-text">
+            <strong>Arbitration & ADR:</strong> Arbitration, mediation, conciliation; confidentiality and swift settlements.
+          </div>
+        </div>
+        <div class="practice-item">
+          <div class="practice-img">
+            <img src="images/Image J.jpg" alt="Image J">
+          </div>
+          <div class="practice-text">
+            <strong>Consumer Protection Law:</strong> Representation before Consumer Commissions for deficiency and unfair practices.
+          </div>
+        </div>
+        <div class="practice-item">
+          <div class="practice-img">
+            <img src="images/Image k.jpeg" alt="Image k">
+          </div>
+          <div class="practice-text">
+            <strong>Labour and Employment Law:</strong> Labour compliance, wrongful termination, industrial dispute; representation before tribunals.
+          </div>
+        </div>
+        <div class="practice-item">
+          <div class="practice-img">
+            <img src="images/Image L.jpg" alt="Image L">
+          </div>
+          <div class="practice-text">
+            <strong>Constitutional & Writ Jurisdiction:</strong> Writ petitions in High Courts and Supreme Court.
+          </div>
+        </div>
+        <div class="practice-item">
+          <div class="practice-img">
+            <img src="images/Image N.webp" alt="Image N">
+          </div>
+          <div class="practice-text">
+            <strong>Notary Services:</strong> Attestation, verification, certification, notarization as per Notaries Act, 1952.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="team">
+      <h3>Our Team</h3>
+      <div class="team-grid">
+        <div class="member">
+          <img src="images/Siddhesh.jpg" alt="Adv Siddhesh Patil profile">
+          <h4>Adv. Siddhesh V. Patil</h4>
+          <p>Proprietor / Senior Counsel</p>
+        </div>
+        <div class="member">
+          <img src="images/Hanmant.jpg" alt="Adv Hanmant Bhise profile">
+          <h4>Adv. Hanmant Bhise</h4>
+          <p>Senior Associate</p>
+        </div>
+        <div class="member">
+          <img src="images/logo.jpg" alt="Adv Jayshree Patil profile">
+          <h4>Adv. Jayshree Patil</h4>
+          <p>Senior Associate</p>
+        </div>
+        <div class="member">
+          <img src="images/Amruta.jpg" alt="Adv Amruta Mahamuni profile">
+          <h4>Adv. Amruta Mahamuni</h4>
+          <p>Associate</p>
+        </div>
+        <div class="member">
+          <img src="images/akshay.jpg" alt="Adv Akshay Malvankar profile">
+          <h4>Adv. Akshay Malvankar</h4>
+          <p>Trainee Associate</p>
+        </div>
+        <div class="member">
+          <img src="images/Kalpana.jpg" alt="Adv Kalpana Jadhav profile">
+          <h4>Adv. Kalpana Jadhav</h4>
+          <p>Trainee Associate</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h3>Contact Us</h3>
+      <div class="contact-grid">
+        <div class="contact-card">
+          <p><strong>Address:</strong><br>
+            SS-4/273, Xerox Ln, Sector 2, Vashi, Navi Mumbai, Maharashtra 400703</p>
+          <p><strong>Phone:</strong><br>
+            07977 414656 | 98677 80746 | +91 98677 17271</p>
+          <p><strong>Email:</strong><br>
+            <a href="mailto:adv.siddheshpatil@gmail.com">adv.siddheshpatil@gmail.com</a></p>
+          <p>
+            <a href="https://maps.app.goo.gl/ft1EbTSybsZWZ5sXA" target="_blank">View on Google Maps</a>
+          </p>
+        </div>
+        <div class="contact-card">
+          <iframe title="SP Associates office location"
+            src="https://www.google.com/maps?q=SS-4/273,%20Xerox%20Lane%20Sector%202%20Vashi%20Navi%20Mumbai&output=embed"
+            width="100%" height="220" style="border:0;border-radius:10px" allowfullscreen loading="lazy"></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="consultation">
+      <h3>Book a Consultation</h3>
+      <form action="mailto:adv.siddheshpatil@gmail.com" method="POST" enctype="text/plain" style="max-width:400px;margin:auto;">
+        <label for="cname" style="display:block;margin:12px 0 4px;">Full Name</label>
+        <input type="text" id="cname" name="Full Name" required
+               style="width:100%;padding:8px;border-radius:6px;border:1px solid #ddd;">
+        <label for="cemail" style="display:block;margin:12px 0 4px;">Email Address</label>
+        <input type="email" id="cemail" name="Email Address" required
+               style="width:100%;padding:8px;border-radius:6px;border:1px solid #ddd;">
+        <label for="cphone" style="display:block;margin:12px 0 4px;">Phone Number</label>
+        <input type="tel" id="cphone" name="Phone Number" required
+               style="width:100%;padding:8px;border-radius:6px;border:1px solid #ddd;">
+        <label for="cdesc" style="display:block;margin:12px 0 4px;">Brief Description</label>
+        <textarea id="cdesc" name="Description" rows="4" required
+                  style="width:100%;padding:8px;border-radius:6px;border:1px solid #ddd;"></textarea>
+        <button type="submit" style="margin-top:16px;padding:10px 18px;border-radius:8px;background-color:#b88b2f;color:white;font-weight:600;border:none;cursor:pointer;">Submit</button>
+      </form>
+      <p style="text-align:center;color:#666;font-size:13px;margin-top:8px;">
+        Your information will be kept confidential.
+      </p>
+    </section>
+
+    <footer>
+      © 2025 SP Associates | Justice is Paramount
+    </footer>
+  </div>
+</body>
+</html>
